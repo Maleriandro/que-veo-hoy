@@ -2,7 +2,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
-var controlador = require('./controladores/constolador.js');
+var controlador = require('./controladores/controlador.js');
 
 var app = express();
 
@@ -21,3 +21,5 @@ app.listen(puerto, function () {
   console.log( "Escuchando en el puerto " + puerto );
 });
 
+app.get('/', function(req, res) { res.send('Hello world!');})
+app.get('/peliculas', controlador.getMovies);
