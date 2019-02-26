@@ -21,5 +21,8 @@ app.listen(puerto, function () {
   console.log( "Escuchando en el puerto " + puerto );
 });
 
-app.get('/', function(req, res) { res.send('Hello world!');})
+app.get('/', controlador.getHome);
 app.get('/peliculas', controlador.getMovies);
+app.get('/generos', controlador.getGenres);
+app.get('/peliculas/recomendacion', controlador.getRecomended);
+app.get('/peliculas/:id', controlador.getOneMovie);
